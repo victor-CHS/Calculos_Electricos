@@ -1,130 +1,82 @@
 function monofasica() {
-    let potencia = parseInt(prompt("Ingrese la potencia en W"))
+    const factorDePotencia = 0.9
+    let potencia = parseFloat(prompt("Ingrese la potencia en W"))
     let voltaje = parseInt(prompt("Ingrese el voltaje, 127 o 220 V"))
-    let resultado = voltaje * 0.9
+    let resultado = voltaje * factorDePotencia
     let resultadoFinal = potencia / resultado
     alert("El resultado de corriente es " + resultadoFinal + " A")
 }
 
 function trifasica() {
+    function multiplicacion(a, b) {
+        return a * b
+    }
+    const multiConst = multiplicacion(1.73, 0.9)
     let potencia = parseInt(prompt("Ingrese la potencia en W"))
     let voltaje = parseInt(prompt("Ingrese el voltaje entre lineas"))
-    let resultado = 1.73 * voltaje * 0.9
+    let resultado = multiConst * voltaje
     let resultadoFinal = potencia / resultado
     alert("El resultado de corriente es " + resultadoFinal + " A")
 }
 
+var calibres = ["16 = 1.31", "14 = 2.08", "12 = 3.31", "10 = 5.26", "8 = 8.37", "6 = 13.30", "4 = 21.20", "2 = 33.60", "1/0 = 53.49", "2/0 = 67.43", "3/0 = 85.01", "4/0 = 107.20"];
+
 function caidaDeTension1() {
+    const cuatro = 4
+    const voltaje = 127
     let distancia = parseInt(prompt("Ingrese la distancia en ml"))
     let corriente = parseInt(prompt("Ingrese la corriente nominal en A"))
-    let calibre = parseInt(prompt("Ingrese el calibre del cable a usar"))
-    if (calibre == 16) {
-        seccion = 1.31
-    } else if (calibre == 14) {
-        seccion = 2.08
-    } else if (calibre == 12) {
-        seccion = 3.31
-    } else if (calibre == 10) {
-        seccion = 5.26
-    } else if (calibre == 8) {
-        seccion = 8.37
-    } else if (calibre == 6) {
-        seccion = 13.30
-    } else if (calibre == 4) {
-        seccion = 21.20
-    } else if (calibre == 2) {
-        seccion = 33.60
-    } else if (calibre == 0) {  //calibre 1/0
-        seccion = 53.49
-    } else if (calibre == 20) {  //calibre 2/0
-        seccion = 67.43
-    } else if (calibre == 30) {  //calibre 3/0
-        seccion = 85.01
-    } else if (calibre == 40) {  //calibre 4/0
-        seccion = 107.20
-    }else {
-        alert ("Opcion incorrecta")
+    for (let i = 0; i < calibres.length; i++) {
+        console.log(calibres[i])
     }
-    let resultado1 = 4 * distancia * corriente
-    let resultado2 = 127 * seccion
+    let seccion = parseInt(prompt("Ingrese la seccion transversal del calibre a usar"))
+    let resultado1 = cuatro * distancia * corriente
+    let resultado2 = voltaje * seccion
     let resultadoFinal = resultado1 / resultado2
-    alert("el resultado de la caida de tension es " + resultadoFinal + " %")
+    if (resultadoFinal <= 3) {
+        alert("el resultado de la caida de tension es " + resultadoFinal + " %")
+    } else if (resultadoFinal > 3) {
+        alert("el resultado de la caida de tension es " + resultadoFinal + " % " + " se debera seleccionar otro calibre ")
+    }
 }
 
 function caidaDeTension2() {
+    const numeroDos = 2
     let distancia = parseInt(prompt("Ingrese la distancia en ml"))
     let corriente = parseInt(prompt("Ingrese la corriente nominal en A"))
     let voltaje = parseInt(prompt("Ingrese el voltaje, 127 o 220 V"))
-    let calibre = parseInt(prompt("Ingrese el calibre del cable a usar"))
-    if (calibre == 16) {
-        seccion = 1.31
-    } else if (calibre == 14) {
-        seccion = 2.08
-    } else if (calibre == 12) {
-        seccion = 3.31
-    } else if (calibre == 10) {
-        seccion = 5.26
-    } else if (calibre == 8) {
-        seccion = 8.37
-    } else if (calibre == 6) {
-        seccion = 13.30
-    } else if (calibre == 4) {
-        seccion = 21.20
-    } else if (calibre == 2) {
-        seccion = 33.60
-    } else if (calibre == 0) {  //calibre 1/0
-        seccion = 53.49
-    } else if (calibre == 20) {  //calibre 2/0
-        seccion = 67.43
-    } else if (calibre == 30) {  //calibre 3/0
-        seccion = 85.01
-    } else if (calibre == 40) {  //calibre 4/0
-        seccion = 107.20
-    }else {
-        alert ("Opcion incorrecta")
+    for (let i = 0; i < calibres.length; i++) {
+        console.log(calibres[i])
     }
-    let resultado1 = 2 * distancia * corriente
+    let seccion = parseInt(prompt("Ingrese la seccion transversal del calibre a usar"))
+    let resultado1 = numeroDos * distancia * corriente
     let resultado2 = voltaje * seccion
     let resultadoFinal = resultado1 / resultado2
-    alert("el resultado de la caida de tension es " + resultadoFinal + " %")
+    if (resultadoFinal <= 3) {
+        alert("el resultado de la caida de tension es " + resultadoFinal + " %")
+    } else if (resultadoFinal > 3) {
+        alert("el resultado de la caida de tension es " + resultadoFinal + " % " + " se debera seleccionar otro calibre ")
+    }
 }
 
 function caidaDeTension3() {
+    const numeroDos = 2
+    const raizCuadrada = 1.73
     let distancia = parseInt(prompt("Ingrese la distancia en ml"))
     let corriente = parseInt(prompt("Ingrese la corriente nominal en A"))
     let voltaje = parseInt(prompt("Ingrese el voltaje entre fases"))
-    let calibre = parseInt(prompt("Ingrese el calibre del cable a usar"))
-    if (calibre == 16) {
-        seccion = 1.31
-    } else if (calibre == 14) {
-        seccion = 2.08
-    } else if (calibre == 12) {
-        seccion = 3.31
-    } else if (calibre == 10) {
-        seccion = 5.26
-    } else if (calibre == 8) {
-        seccion = 8.37
-    } else if (calibre == 6) {
-        seccion = 13.30
-    } else if (calibre == 4) {
-        seccion = 21.20
-    } else if (calibre == 2) {
-        seccion = 33.60
-    } else if (calibre == 0) {  //calibre 1/0
-        seccion = 53.49
-    } else if (calibre == 20) {  //calibre 2/0
-        seccion = 67.43
-    } else if (calibre == 30) {  //calibre 3/0
-        seccion = 85.01
-    } else if (calibre == 40) {  //calibre 4/0
-        seccion = 107.20
-    }else {
-        alert ("Opcion incorrecta")
+    for (let i = 0; i < calibres.length; i++) {
+        console.log(calibres[i])
     }
-    let resultado1 = 2 * 1.73 * distancia * corriente
+    let seccion = parseInt(prompt("Ingrese la seccion transversal del calibre a usar"))
+    let resultado1 = numeroDos * raizCuadrada * distancia * corriente
     let resultado2 = voltaje * seccion
     let resultadoFinal = resultado1 / resultado2
-    alert("el resultado de la caida de tension es " + resultadoFinal + " %")
+    if (resultadoFinal <= 3) {
+        alert("el resultado de la caida de tension es " + resultadoFinal + " %")
+    } else if (resultadoFinal > 3) {
+        alert("el resultado de la caida de tension es " + resultadoFinal + " % " + " se debera seleccionar otro calibre ")
+    }
 }
 
 let menu = parseInt(prompt("1-Corriente Electrica Monofasica \n 2-Corriete Electrica Trifasica \n 3-Caida de Tension Monofasica \n 4-Caida de Tension Bifasica \n 5-Caida de Tension Trifasica \n 6-salir"))

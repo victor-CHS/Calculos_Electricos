@@ -1,18 +1,84 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script defer src="js/main.js"></script>
-    <title>calculos electricos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+        <script defer src="js/main.js"></script>
+    <link rel="stylesheet" href="css/stely.css">
+    <title>Calculos Electricos</title>
 </head>
 
 <body>
-    <h1>Calculos Electricos</h1>
-    <p>Este proyecto pretende realizar calculos electricos de manera mas sencilla y rapida.</p>
-    <p>Estara dirigida a ingenieros o proyectistas que se dedican a realizar proyectos y calculos electricos</p>
-    <p>ing. Victor chan Serna</p>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav_titulo">
+                <h1 class="nav_titulo--h1">Calculos Electricos</h1>
+            </div>
+            <div class="nav_menu">
+                <ul class="nav_menu--ul">
+                    <li><a class="btn" href="index.html">Corriente Electrica</a></li>
+                    <li><a class="btn" href="paginas/Caida.html">Caida de Tension</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <section class="section">
+        <div class="section_titulo--h2">
+            <h2>Calculo de Corriente Electrica</h2>
+        </div>
+        <div class="section_formulario">
+            <div class="section_titulo--h3">
+                <h3>Corriente Electrica Sistema Monofasico</h3>
+            </div>
+            <div class="section_formulario--dato">
+                <label>Potencia:</label>
+                <input type="text" placeholder="Ingrese la potencia en W">
+            </div>
+            <div class="section_formulario--dato">
+                <label>Voltaje:</label>
+                <input type="text" placeholder="Ingrese el Voltaje">
+            </div>
+            <div>
+                <button class="section_div--boton">Calcular</button>
+                <button class="section_div--boton">Reiniciar</button>
+            </div>
+        </div>
+
+        <div class="section_formulario">
+            <div class="section_titulo--h3">
+                <h3>Corriente Electrica Sistema Trifasico</h3>
+            </div>
+            <div class="section_formulario--dato">
+                <label>Potencia:</label>
+                <input type="text" placeholder="Ingrese la potencia en W">
+            </div>
+            <div class="section_formulario--dato">
+                <label>Voltaje:</label>
+                <input type="text" placeholder="Ingrese el V. Entre Lineas">
+            </div>
+            <div>
+                <button class="section_div--boton">Calcular</button>
+                <button class="section_div--boton">Reiniciar</button>
+            </div>
+        </div>
+
+    </section>
+    <footer class="footer">
+        <div class="footer_div">
+            <p class="footer_div--p">Visitanos en:</p>
+            <div>
+                <img class="footer_div--img" src="iconos/facebook.png" alt="facebook">
+                <img class="footer_div--img" src="iconos/letter-x.png" alt="letter-x">
+                <img class="footer_div--img" src="iconos/instagram.png" alt="instagram">
+            </div>
+            <p class="footer_div--p">Creado por Victor Chan Serna</p>
+        </div>
+
+    </footer>
 </body>
 
 </html>

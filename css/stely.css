@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 300px 1fr auto;
+}
+
+/* inicia navegacion */
+.nav {
+    width: 100%;
+    height: 300px;
+    background-image: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .5)), url(../imagenes/banner_calculo.jpg);
+    background-position: center;
+    background-size: cover;
+
+
+}
+
+.nav_titulo {
+    width: 100%;
+    height: 130px;
+    text-align: center;
+}
+
+.nav_titulo--h1 {
+    padding: 40px;
+    color: white;
+    font-family: "Roboto Mono", monospace;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 26px;
+}
+
+.nav_menu {
+    width: 100%;
+    height: 170px;
+    text-align: center;
+
+}
+
+.nav_menu--ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+}
+
+.btn {
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    padding: 8px 15px;
+    font-family: "Roboto Mono", monospace;
+    font-weight: 200;
+    font-size: 15px;
+}
+
+.btn:hover {
+    background-color: grey;
+}
+
+/* inicia el footer */
+.footer {
+    background-color: gray;
+    border-top: 2px solid black;
+    width: 100%;
+    text-align: center;
+}
+
+.footer_div {
+    padding: 30px;
+}
+
+.footer_div--img {
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+}
+
+/* section */
+
+.section_titulo--h2 {
+    font-family: "Roboto Mono", monospace;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 15px;
+    text-align: center;
+    margin: 20px;
+}
+
+.section_formulario {
+    position: center;
+    height: 200px;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-bottom: 10px;
+    width: 50%;
+    text-align: center;
+    border: 2px solid black;
+    
+}
+
+.section_titulo--h3 {
+    font-family: "Roboto Mono", monospace;
+    font-weight: 300;
+    font-style: italic;
+    margin: 10px;
+}
+
+.section_formulario--dato {
+    margin: 10px;
+}
+
+.section_div--boton {
+    padding: 5px;
+    margin: 5px;
+    color: white;
+    background-color: black;
+    border: none;
+}
+
+.section_div--boton:hover {
+    background-color: grey;
+}
+
+.section_formulario--caida{
+    height: 270px;
+}
