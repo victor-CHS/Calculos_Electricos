@@ -36,15 +36,18 @@
             </div>
             <div class="section_formulario--dato">
                 <label>Potencia:</label>
-                <input type="text" placeholder="Ingrese la potencia en W">
+                <input type="number" id="potencia" placeholder="Ingrese la potencia en W">
             </div>
             <div class="section_formulario--dato">
                 <label>Voltaje:</label>
-                <input type="text" placeholder="Ingrese el Voltaje">
+                <input type="number" id="voltaje" placeholder="Ingrese el Voltaje">
             </div>
             <div>
-                <button class="section_div--boton">Calcular</button>
+                <button  type="button" id="calcular" class="section_div--boton">Calcular</button>
                 <button class="section_div--boton">Reiniciar</button>
+            </div>
+            <div class="div_resltado">
+                <h3 id="resultadoCalculo"></h3>
             </div>
         </div>
 
@@ -54,15 +57,18 @@
             </div>
             <div class="section_formulario--dato">
                 <label>Potencia:</label>
-                <input type="text" placeholder="Ingrese la potencia en W">
+                <input type="number" id="potenciaUno" placeholder="Ingrese la potencia en W">
             </div>
             <div class="section_formulario--dato">
                 <label>Voltaje:</label>
-                <input type="text" placeholder="Ingrese el V. Entre Lineas">
+                <input type="number" id="voltajeUno" placeholder="Ingrese el V. Entre Lineas">
             </div>
             <div>
-                <button class="section_div--boton">Calcular</button>
+                <button id="calcularUno" class="section_div--boton">Calcular</button>
                 <button class="section_div--boton">Reiniciar</button>
+            </div>
+            <div class="div_resltado">
+                <h3 id="resultadoCalculoUno"></h3>
             </div>
         </div>
 
