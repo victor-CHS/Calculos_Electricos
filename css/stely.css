@@ -96,14 +96,14 @@ body {
 
 .section_formulario {
     position: center;
-    height: 180px;
+    height: 250px;
     margin-left: 25%;
     margin-right: 25%;
     margin-bottom: 10px;
     width: 50%;
     text-align: center;
     border: 2px solid black;
-    
+
 }
 
 .section_titulo--h3 {
@@ -129,12 +129,16 @@ body {
     background-color: grey;
 }
 
-.section_formulario--caida{
-    height: 270px;
+.section_formulario--caida {
+    height: 290px;
 }
 
 .div_resultado {
     width: 100%;
     height: 10px;
-     
+
+}
+
+.impresion-h4 {
+    margin-top: 20px;
 }

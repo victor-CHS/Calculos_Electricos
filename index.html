@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
         rel="stylesheet">
-        <script defer src="js/main.js"></script>
+    <script defer src="js/main.js"></script>
     <link rel="stylesheet" href="css/stely.css">
     <title>Calculos Electricos</title>
 </head>
@@ -43,12 +44,13 @@
                 <input type="number" id="voltaje" placeholder="Ingrese el Voltaje">
             </div>
             <div>
-                <button  type="button" id="calcular" class="section_div--boton">Calcular</button>
-                <button class="section_div--boton">Reiniciar</button>
+                <button type="button" id="calcular" class="section_div--boton">Calcular</button>
+                <button id="reiniciar" class="section_div--boton">Reiniciar</button>
             </div>
-            <div class="div_resltado">
+            <div id="nodoDiv" class="div_resltado">
                 <h3 id="resultadoCalculo"></h3>
             </div>
+
         </div>
 
         <div class="section_formulario">
@@ -65,11 +67,12 @@
             </div>
             <div>
                 <button id="calcularUno" class="section_div--boton">Calcular</button>
-                <button class="section_div--boton">Reiniciar</button>
+                <button id="reiniciarUno" class="section_div--boton">Reiniciar</button>
             </div>
             <div class="div_resltado">
                 <h3 id="resultadoCalculoUno"></h3>
             </div>
+
         </div>
 
     </section>
