@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../css/stely.css">
-    <script defer src="../js/main.js"></script>
+    <script defer src="../js/caida.js"></script>
     <title>Caida de Tension</title>
 </head>
 
@@ -36,19 +36,22 @@
             </div>
             <div class="section_formulario--dato">
                 <label>Distancia:</label>
-                <input type="text" placeholder="Ingrese la distancia en ml">
+                <input id="distancia" type="number" placeholder="Ingrese la distancia en ml">
             </div>
             <div class="section_formulario--dato">
                 <label>Corriente:</label>
-                <input type="text" placeholder="Ingrese la corriente en A">
+                <input id="corriente" type="number" placeholder="Ingrese la corriente en A">
             </div>
             <div class="section_formulario--dato">
-                <label>Calibre:</label>
-                <input type="text" placeholder="Ingrese el calibre del cable">
+                <label>Seccion Transversal:</label>
+                <select name="" id="cable"></select>
             </div>
             <div>
-                <button class="section_div--boton">Calcular</button>
+                <button id="calcular" class="section_div--boton">Calcular</button>
                 <button class="section_div--boton">Reiniciar</button>
+            </div>
+            <div class="div_resltado">
+                <h3 id="resultadoCalculo"></h3>
             </div>
         </div>
 
@@ -69,8 +72,8 @@
                 <input type="text" placeholder="Ingrese el V. 127 o 220">
             </div>
             <div class="section_formulario--dato">
-                <label>Calibre:</label>
-                <input type="text" placeholder="Ingrese el calibre del cable">
+                <label>Seccion Transversal:</label>
+                <select name="" id="cable"></select>
             </div>
             <div>
                 <button class="section_div--boton">Calcular</button>
@@ -95,8 +98,8 @@
                 <input type="text" placeholder="Ingrese el V. entre fases">
             </div>
             <div class="section_formulario--dato">
-                <label>Calibre:</label>
-                <input type="text" placeholder="Ingrese el calibre del cable">
+                <label>Seccion Transversal:</label>
+                <select name="" id="cable"></select>
             </div>
             <div>
                 <button class="section_div--boton">Calcular</button>
