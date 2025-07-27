@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
         rel="stylesheet">
+    <!-- SWEET ALERT  -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="../css/stely.css">
     <script defer src="../js/caida.js"></script>
     <title>Caida de Tension</title>
@@ -31,7 +33,7 @@
         <div class="section_titulo--h2">
             <h2>Calculo de Caida de Tension</h2>
         </div>
-        <div class="section_formulario section_formulario--caida">
+        <form id="sectionFormulario" class="section_formulario section_formulario--caida">
             <div class="section_titulo--h3">
                 <h3>Caida de Tension Sistema Monofasico</h3>
             </div>
@@ -48,15 +50,17 @@
                 <select name="" id="cable"></select>
             </div>
             <div>
-                <button id="calcular" class="section_div--boton">Calcular</button>
-                <button class="section_div--boton">Reiniciar</button>
+                <button type="button" id="calcular" class="section_div--boton">Calcular</button>
+                <button type="reset" id="reiniciar" class="section_div--boton"
+                    onclick="reiniciarAlert()">Reiniciar</button>
+                <button type="button" id="limpiar" class="section_div--boton">Limpiar</button>
             </div>
             <div class="div_resltado">
                 <h3 id="resultadoCalculo"></h3>
             </div>
-        </div>
+        </form>
 
-        <div class="section_formulario section_formulario--caida">
+        <form id="sectionFormularioUno" class="section_formulario section_formulario--caida">
             <div class="section_titulo--h3">
                 <h3>Caida de Tension Sistema Bifasico</h3>
             </div>
@@ -77,15 +81,17 @@
                 <select name="" id="cableUno"></select>
             </div>
             <div>
-                <button id="calcularUno" class="section_div--boton">Calcular</button>
-                <button class="section_div--boton">Reiniciar</button>
+                <button type="button" id="calcularUno" class="section_div--boton">Calcular</button>
+                <button type="reset" id="reiniciarUno" class="section_div--boton"
+                    onclick="reiniciarAlert()">Reiniciar</button>
+                <button type="button" id="limpiarUno" class="section_div--boton">Limpiar</button>
             </div>
             <div class="div_resltado">
                 <h3 id="resultadoCalculoUno"></h3>
             </div>
-        </div>
+        </form>
 
-        <div class="section_formulario section_formulario--caida">
+        <form id="sectionFormularioDos" class="section_formulario section_formulario--caida">
             <div class="section_titulo--h3">
                 <h3>Caida de Tension Sistema Trifasico</h3>
             </div>
@@ -106,13 +112,15 @@
                 <select name="" id="cableDos"></select>
             </div>
             <div>
-                <button id="calcularDos" class="section_div--boton">Calcular</button>
-                <button class="section_div--boton">Reiniciar</button>
+                <button type="button" id="calcularDos" class="section_div--boton">Calcular</button>
+                <button type="reset" id="reiniciarDos" class="section_div--boton"
+                    onclick="reiniciarAlert()">Reiniciar</button>
+                <button type="button" id="limpiarDos" class="section_div--boton">Limpiar</button>
             </div>
             <div class="div_resltado">
                 <h3 id="resultadoCalculoDos"></h3>
             </div>
-        </div>
+        </form>
     </section>
 
 

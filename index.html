@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
         rel="stylesheet">
+    <!-- SWEET ALERT  -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script defer src="js/main.js"></script>
     <link rel="stylesheet" href="css/stely.css">
     <title>Calculos Electricos</title>
@@ -31,7 +33,7 @@
         <div class="section_titulo--h2">
             <h2>Calculo de Corriente Electrica</h2>
         </div>
-        <div class="section_formulario">
+        <form class="section_formulario" id="sectionFormulario">
             <div class="section_titulo--h3">
                 <h3>Corriente Electrica Sistema Monofasico</h3>
             </div>
@@ -45,15 +47,17 @@
             </div>
             <div>
                 <button type="button" id="calcular" class="section_div--boton">Calcular</button>
-                <button id="reiniciar" class="section_div--boton">Reiniciar</button>
+                <button type="reset" id="reiniciarForm" class="section_div--boton"
+                    onclick="reiniciarAlert()">Reiniciar</button>
+                <button type="button" id="limpiar" class="section_div--boton">Limpiar</button>
             </div>
-            <div id="nodoDiv" class="div_resltado">
+            <div class="div_resltado">
                 <h3 id="resultadoCalculo"></h3>
             </div>
 
-        </div>
+        </form>
 
-        <div class="section_formulario">
+        <form class="section_formulario" id="sectionFormularioUno">
             <div class="section_titulo--h3">
                 <h3>Corriente Electrica Sistema Trifasico</h3>
             </div>
@@ -66,14 +70,15 @@
                 <input type="number" id="voltajeUno" placeholder="Ingrese el V. Entre Lineas">
             </div>
             <div>
-                <button id="calcularUno" class="section_div--boton">Calcular</button>
-                <button id="reiniciarUno" class="section_div--boton">Reiniciar</button>
+                <button type="button" id="calcularUno" class="section_div--boton">Calcular</button>
+                <button type="reset" id="reiniciarFormUno" class="section_div--boton"
+                    onclick="reiniciarAlert()">Reiniciar</button>
+                <button type="button" id="limpiarUno" class="section_div--boton">Limpiar</button>
             </div>
             <div class="div_resltado">
                 <h3 id="resultadoCalculoUno"></h3>
             </div>
-
-        </div>
+        </form>
 
     </section>
     <footer class="footer">
