@@ -1,4 +1,13 @@
 
+document.addEventListener(`DOMContentLoaded`, function() {
+    const input = document.querySelectorAll(`numPositivos`);
+    input.forEach(input => {
+        input.addEventListener(`input`, () => {
+            input.value = input.value.replace(/[^0-9]/g, '');
+        });
+    });
+});
+
 //Calculo de cooriente electrica Monofasica 
 let calcular = document.getElementById("calcular")
 let potencia = document.getElementById("potencia")
@@ -98,7 +107,7 @@ function limpiarValorUno(campo) {
 
 reiniciarFormUno.addEventListener("click", () => {
     limpiarCamposUno(sectionFormularioUno, limpiarValorUno);
-    //alert("Formulario limpiado");
+   
 });
 
 function reiniciarAlert() {

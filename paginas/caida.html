@@ -33,94 +33,106 @@
         <div class="section_titulo--h2">
             <h2>Calculo de Caida de Tension</h2>
         </div>
-        <form id="sectionFormulario" class="section_formulario section_formulario--caida">
-            <div class="section_titulo--h3">
-                <h3>Caida de Tension Sistema Monofasico</h3>
-            </div>
-            <div class="section_formulario--dato">
-                <label>Distancia:</label>
-                <input id="distancia" type="number" placeholder="Ingrese la distancia en ml">
-            </div>
-            <div class="section_formulario--dato">
-                <label>Corriente:</label>
-                <input id="corriente" type="number" placeholder="Ingrese la corriente en A">
-            </div>
-            <div class="section_formulario--dato">
-                <label>Seccion Transversal:</label>
-                <select name="" id="cable"></select>
-            </div>
-            <div>
-                <button type="button" id="calcular" class="section_div--boton">Calcular</button>
-                <button type="reset" id="reiniciar" class="section_div--boton"
-                    onclick="reiniciarAlert()">Reiniciar</button>
-                <button type="button" id="limpiar" class="section_div--boton">Limpiar</button>
-            </div>
-            <div class="div_resltado">
-                <h3 id="resultadoCalculo"></h3>
-            </div>
-        </form>
+        <div class="sectionFlex">
+            <form id="sectionFormulario" class="section_formulario section_formulario--caida">
+                <div class="section_titulo--h3">
+                    <h3>Caida de Tension Sistema Monofasico</h3>
+                </div>
+                <div class="section_formulario--dato">
+                    <label>Distancia:</label>
+                    <input id="distancia" type="number" min="0" placeholder="Ingrese la distancia en ml">
+                </div>
+                <div class="section_formulario--dato">
+                    <label>Corriente:</label>
+                    <input id="corriente" type="number" min="0" placeholder="Ingrese la corriente en A">
+                </div>
+                <div class="section_formulario--dato">
+                    <label>Seccion Transversal:</label>
+                    <select name="" id="cable"></select>
+                </div>
+                <div>
+                    <button type="button" id="calcular" class="section_div--boton">Calcular</button>
+                    <button type="reset" id="reiniciar" class="section_div--boton"
+                        onclick="reiniciarAlert()">Reiniciar</button>
+                    <button type="button" id="limpiar" class="section_div--boton">Limpiar</button>
+                </div>
+                <div class="div_resltado">
+                    <h3 id="resultadoCalculo"></h3>
+                </div>
+            </form>
 
-        <form id="sectionFormularioUno" class="section_formulario section_formulario--caida">
-            <div class="section_titulo--h3">
-                <h3>Caida de Tension Sistema Bifasico</h3>
-            </div>
-            <div class="section_formulario--dato">
-                <label>Distancia:</label>
-                <input id="distanciaUno" type="number" placeholder="Ingrese la distancia en ml">
-            </div>
-            <div class="section_formulario--dato">
-                <label>Corriente:</label>
-                <input id="corrienteUno" type="number" placeholder="Ingrese la corriente en A">
-            </div>
-            <div class="section_formulario--dato">
-                <label>Voltaje:</label>
-                <input id="voltajeUno" type="number" placeholder="Ingrese el V. 127 o 220">
-            </div>
-            <div class="section_formulario--dato">
-                <label>Seccion Transversal:</label>
-                <select name="" id="cableUno"></select>
-            </div>
-            <div>
-                <button type="button" id="calcularUno" class="section_div--boton">Calcular</button>
-                <button type="reset" id="reiniciarUno" class="section_div--boton"
-                    onclick="reiniciarAlert()">Reiniciar</button>
-                <button type="button" id="limpiarUno" class="section_div--boton">Limpiar</button>
-            </div>
-            <div class="div_resltado">
-                <h3 id="resultadoCalculoUno"></h3>
-            </div>
-        </form>
+            <form id="sectionFormularioUno" class="section_formulario section_formulario--caida">
+                <div class="section_titulo--h3">
+                    <h3>Caida de Tension Sistema Bifasico</h3>
+                </div>
+                <div class="section_formulario--dato">
+                    <label>Distancia:</label>
+                    <input id="distanciaUno" type="number" placeholder="Ingrese la distancia en ml">
+                </div>
+                <div class="section_formulario--dato">
+                    <label>Corriente:</label>
+                    <input id="corrienteUno" type="number" placeholder="Ingrese la corriente en A">
+                </div>
+                <div class="section_formulario--dato">
+                    <label>Voltaje:</label>
+                    <input id="voltajeUno" type="number" placeholder="Ingrese el V. 127 o 220">
+                </div>
+                <div class="section_formulario--dato">
+                    <label>Seccion Transversal:</label>
+                    <select name="" id="cableUno"></select>
+                </div>
+                <div>
+                    <button type="button" id="calcularUno" class="section_div--boton">Calcular</button>
+                    <button type="reset" id="reiniciarUno" class="section_div--boton"
+                        onclick="reiniciarAlert()">Reiniciar</button>
+                    <button type="button" id="limpiarUno" class="section_div--boton">Limpiar</button>
+                </div>
+                <div class="div_resltado">
+                    <h3 id="resultadoCalculoUno"></h3>
+                </div>
+            </form>
 
-        <form id="sectionFormularioDos" class="section_formulario section_formulario--caida">
-            <div class="section_titulo--h3">
-                <h3>Caida de Tension Sistema Trifasico</h3>
-            </div>
-            <div class="section_formulario--dato">
-                <label>Distancia:</label>
-                <input id="distanciaDos" type="number" placeholder="Ingrese la distancia en ml">
-            </div>
-            <div class="section_formulario--dato">
-                <label>Corriente:</label>
-                <input id="corrienteDos" type="number" placeholder="Ingrese la corriente en A">
-            </div>
-            <div class="section_formulario--dato">
-                <label>Voltaje:</label>
-                <input id="voltajeDos" type="number" placeholder="Ingrese el V. entre fases">
-            </div>
-            <div class="section_formulario--dato">
-                <label>Seccion Transversal:</label>
-                <select name="" id="cableDos"></select>
-            </div>
+            <form id="sectionFormularioDos" class="section_formulario section_formulario--caida">
+                <div class="section_titulo--h3">
+                    <h3>Caida de Tension Sistema Trifasico</h3>
+                </div>
+                <div class="section_formulario--dato">
+                    <label>Distancia:</label>
+                    <input id="distanciaDos" type="number" placeholder="Ingrese la distancia en ml">
+                </div>
+                <div class="section_formulario--dato">
+                    <label>Corriente:</label>
+                    <input id="corrienteDos" type="number" placeholder="Ingrese la corriente en A">
+                </div>
+                <div class="section_formulario--dato">
+                    <label>Voltaje:</label>
+                    <input id="voltajeDos" type="number" placeholder="Ingrese el V. entre fases">
+                </div>
+                <div class="section_formulario--dato">
+                    <label>Seccion Transversal:</label>
+                    <select name="" id="cableDos"></select>
+                </div>
+                <div>
+                    <button type="button" id="calcularDos" class="section_div--boton">Calcular</button>
+                    <button type="reset" id="reiniciarDos" class="section_div--boton"
+                        onclick="reiniciarAlert()">Reiniciar</button>
+                    <button type="button" id="limpiarDos" class="section_div--boton">Limpiar</button>
+                </div>
+                <div class="div_resltado">
+                    <h3 id="resultadoCalculoDos"></h3>
+                </div>
+            </form>
+        </div>
+        
+        <div class="div_tabla">
             <div>
-                <button type="button" id="calcularDos" class="section_div--boton">Calcular</button>
-                <button type="reset" id="reiniciarDos" class="section_div--boton"
-                    onclick="reiniciarAlert()">Reiniciar</button>
-                <button type="button" id="limpiarDos" class="section_div--boton">Limpiar</button>
+                <h3>Seleccione la seccion transversal segun el calibre a utilizar:</h3>
             </div>
-            <div class="div_resltado">
-                <h3 id="resultadoCalculoDos"></h3>
-            </div>
-        </form>
+           <div>
+                <img src="../imagenes/tabla.png" alt="Tabla de secciones transversales">  
+           </div>
+           
+        </div>
     </section>
 
 
