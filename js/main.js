@@ -1,5 +1,5 @@
 
-document.addEventListener(`DOMContentLoaded`, function() {
+document.addEventListener(`DOMContentLoaded`, function () {
     const input = document.querySelectorAll(`numPositivos`);
     input.forEach(input => {
         input.addEventListener(`input`, () => {
@@ -22,7 +22,7 @@ calcular.onclick = () => {
     let dato = JSON.parse(localStorage.getItem("resultado"))
 
     let resultadoCalculo = document.getElementById("resultadoCalculo")
-    resultadoCalculo.innerText = "El resultado de la corriente es: \n" + dato + " A"
+    resultadoCalculo.innerText = "El resultado de la corriente es: \n" + dato.toFixed(2) + " A"
     print.innerText = resultadoCalculo
 
 }
@@ -76,7 +76,7 @@ calcularUno.onclick = () => {
     let datoUno = JSON.parse(localStorage.getItem("resultado"))
 
     let resultadoCalculoUno = document.getElementById("resultadoCalculoUno")
-    resultadoCalculoUno.innerText = "El resultado de la corriente es: \n" + datoUno + " A"
+    resultadoCalculoUno.innerText = "El resultado de la corriente es: \n" + datoUno.toFixed(2) + " A"
     print.innerText = resultadoCalculoUno
 }
 
@@ -107,7 +107,7 @@ function limpiarValorUno(campo) {
 
 reiniciarFormUno.addEventListener("click", () => {
     limpiarCamposUno(sectionFormularioUno, limpiarValorUno);
-   
+
 });
 
 function reiniciarAlert() {

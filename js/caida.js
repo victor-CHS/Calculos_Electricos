@@ -1,13 +1,24 @@
+let seccionTrans = [
+    { cable: "16", seccion: 1.31 },
+    { cable: "14", seccion: 2.08 },
+    { cable: "12", seccion: 3.31 },
+    { cable: "10", seccion: 5.26 },
+    { cable: "8", seccion: 8.37 },
+    { cable: "6", seccion: 13.30 },
+    { cable: "4", seccion: 21.20 },
+    { cable: "2", seccion: 33.60 },
+    { cable: "1/0", seccion: 53.49 },
+    { cable: "2/0", seccion: 67.43 },
+    { cable: "3/0", seccion: 85.01 },
+    { cable: "4/0", seccion: 107.20 }
+];
 
-let seccionTrans = [1.31, 2.08, 3.31, 5.26, 8.37, 13.30, 21.20, 33.60, 53.49, 67.43, 85.01, 107.20];
 let seccion = "";
-
 for (let i = 0; i < seccionTrans.length; i++) {
-    seccion += "<option>" + seccionTrans[i] + "</option>"
+    seccion += `<option value="${seccionTrans[i].seccion}">${seccionTrans[i].cable}</option>`;
 }
 
-//Caida de tension monofasico
-document.getElementById("cable").innerHTML = "<option>" + seccion + "</option>"
+document.getElementById("cable").innerHTML = seccion;
 
 let calcular = document.getElementById("calcular")
 let distancia = document.getElementById("distancia")
@@ -18,7 +29,7 @@ const volt = 127
 
 calcular.onclick = () => {
     let resultado1 = cuatro * distancia.value * corriente.value
-    let resultado2 = volt * cable.value
+    let resultado2 = volt * parseFloat(cable.value)
     let resultadoFinal = resultado1 / resultado2
 
     localStorage.setItem("resultado", JSON.stringify(resultadoFinal));
@@ -26,10 +37,10 @@ calcular.onclick = () => {
 
     let resultadoCalculo = document.getElementById("resultadoCalculo")
     if (dato <= 3) {
-        resultadoCalculo.innerText = "El resultado de la caida de tension es: \n" + dato + " %"
+        resultadoCalculo.innerText = "El resultado de la caida de tension es: \n" + dato.toFixed(2) + " %"
         print.innerText = resultadoCalculo
     } else if (dato > 3) {
-        resultadoCalculo.innerText = "El resultado de la caida de tension es: " + dato + " %,\n " + "se debera elegir otro calibre"
+        resultadoCalculo.innerText = "El resultado de la caida de tension es: " + dato.toFixed(2) + " %,\n " + "se debera elegir otro calibre"
         print.innerText = resultadoCalculo
     }
 }
@@ -66,7 +77,7 @@ reiniciar.addEventListener("click", () => {
 
 
 //Caida de tension Bifasica
-document.getElementById("cableUno").innerHTML = "<option>" + seccion + "</option>"
+document.getElementById("cableUno").innerHTML = seccion;
 
 let calcularUno = document.getElementById("calcularUno")
 let distanciaUno = document.getElementById("distanciaUno")
@@ -85,10 +96,10 @@ calcularUno.onclick = () => {
 
     let resultadoCalculoUno = document.getElementById("resultadoCalculoUno")
     if (dato <= 3) {
-        resultadoCalculoUno.innerText = "El resultado de la caida de tension es: \n" + dato + " %"
+        resultadoCalculoUno.innerText = "El resultado de la caida de tension es: \n" + dato.toFixed(2) + " %"
         print.innerText = resultadoCalculoUno
     } else if (dato > 3) {
-        resultadoCalculoUno.innerText = "El resultado de la caida de tension es: " + dato + " %,\n " + "se debera elegir otro calibre"
+        resultadoCalculoUno.innerText = "El resultado de la caida de tension es: " + dato.toFixed(2) + " %,\n " + "se debera elegir otro calibre"
         print.innerText = resultadoCalculoUno
     }
 }
@@ -125,7 +136,7 @@ reiniciarUno.addEventListener("click", () => {
 
 
 //Caida de tension Trifasica
-document.getElementById("cableDos").innerHTML = "<option>" + seccion + "</option>"
+document.getElementById("cableDos").innerHTML = seccion;
 
 function multiplicacion(a, b) {
     return a * b
@@ -147,10 +158,10 @@ calcularDos.onclick = () => {
 
     let resultadoCalculoDos = document.getElementById("resultadoCalculoDos")
     if (dato <= 3) {
-        resultadoCalculoDos.innerText = "El resultado de la caida de tension es: " + dato + " %"
+        resultadoCalculoDos.innerText = "El resultado de la caida de tension es: " + dato.toFixed(2) + " %"
         print.innerText = resultadoCalculoDos
     } else if (dato > 3) {
-        resultadoCalculoDos.innerText = "El resultado de la caida de tension es: " + dato + " %,\n " + "se debera elegir otro calibre"
+        resultadoCalculoDos.innerText = "El resultado de la caida de tension es: " + dato.toFixed(2) + " %,\n " + "se debera elegir otro calibre"
         print.innerText = resultadoCalculoDos
     }
 }

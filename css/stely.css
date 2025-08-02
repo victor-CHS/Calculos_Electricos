@@ -100,7 +100,7 @@ body {
 
 .section_formulario {
     position: center;
-    height: 250px;
+    height: 230px;
     margin-left: 25%;
     margin-right: 25%;
     margin-bottom: 10px;
@@ -134,7 +134,7 @@ body {
 }
 
 .section_formulario--caida {
-    height: 290px;
+    height: 270px;
 }
 
 .div_resultado {
@@ -154,5 +154,5 @@ body {
     flex-direction: column;
     align-items: center;
 
-    
+
 }
