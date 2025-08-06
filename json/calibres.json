@@ -1,0 +1,50 @@
+[
+    {
+        "cable": "16",
+        "seccion": 1.31
+    },
+    {
+        "cable": "14",
+        "seccion": 2.08
+    },
+    {
+        "cable": "12",
+        "seccion": 3.31
+    },
+    {
+        "cable": "10",
+        "seccion": 5.26
+    },
+    {
+        "cable": "8",
+        "seccion": 8.37
+    },
+    {
+        "cable": "6",
+        "seccion": 13.30
+    },
+    {
+        "cable": "4",
+        "seccion": 21.20
+    },
+    {
+        "cable": "2",
+        "seccion": 33.60
+    },
+    {
+        "cable": "1/0",
+        "seccion": 53.49
+    },
+    {
+        "cable": "2/0",
+        "seccion": 67.43
+    },
+    {
+        "cable": "3/0",
+        "seccion": 85.01
+    },
+    {
+        "cable": "4/0",
+        "seccion": 107.20
+    }
+]

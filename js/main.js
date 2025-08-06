@@ -8,13 +8,26 @@ document.addEventListener(`DOMContentLoaded`, function () {
     });
 });
 
-//Calculo de cooriente electrica Monofasica 
+//Calculo de coriente electrica Monofasica 
 let calcular = document.getElementById("calcular")
 let potencia = document.getElementById("potencia")
 let voltaje = document.getElementById("voltaje")
 const factorDePotencia = 0.9
 
 calcular.onclick = () => {
+    if (!potencia.value || !voltaje.value) {
+        Swal.fire({
+            position: "center-center",
+            icon: "info",
+            title: "Antes de continuar, ingrese los parametros",
+            showConfirmButton: false,
+            timer: 2000,
+            background: "#000",
+            color: "#fff",
+            iconColor: "#0099ffff"
+        });
+        return;
+    }
     let resultado = voltaje.value * factorDePotencia
     let resultadoFinal = potencia.value / resultado
 
@@ -28,11 +41,38 @@ calcular.onclick = () => {
 }
 
 limpiar.onclick = () => {
-    localStorage.removeItem("resultado");
+    try {
+        localStorage.removeItem("resultado");
 
-    let resultadoCalculo = document.getElementById("resultadoCalculo")
-    resultadoCalculo.innerText = " "
-    print.innerText = resultadoCalculo
+        let resultadoCalculo = document.getElementById("resultadoCalculo")
+        resultadoCalculo.innerText = " "
+        print.innerText = resultadoCalculo
+
+    } catch (error) {
+        console.error("Error al limpiar el resultado:", error.message);
+        Swal.fire({
+            position: "center",
+            icon: "error",
+            title: "Error al limpiar",
+            text: error.message,
+            background: "#000",
+            color: "#fff",
+            iconColor: "#ff0033"
+        });
+    } finally {
+        Swal.fire({
+            position: "center-center",
+            icon: "success",
+            title: "Formulario Limpiado",
+            showConfirmButton: false,
+            timer: 1500,
+            background: "#000",
+            color: "#fff",
+            iconColor: "#00ffffff"
+        });
+
+    }
+
 }
 
 const sectionFormulario = document.getElementById("sectionFormulario");
@@ -53,6 +93,19 @@ function limpiarValor(campo) {
 }
 
 reiniciarForm.addEventListener("click", () => {
+    if (!potencia.value || !voltaje.value) {
+        Swal.fire({
+            position: "center-center",
+            icon: "error",
+            title: "No hay datos ingresados",
+            showConfirmButton: false,
+            timer: 1000,
+            background: "#000",
+            color: "#fff",
+            iconColor: "#ff0000ff"
+        });
+        return;
+    } 
     limpiarCampos(sectionFormulario, limpiarValor);
 
 });
@@ -69,6 +122,19 @@ let voltajeUno = document.getElementById("voltajeUno")
 
 
 calcularUno.onclick = () => {
+    if (!potenciaUno.value || !voltajeUno.value) {
+        Swal.fire({
+            position: "center-center",
+            icon: "info",
+            title: "Antes de continuar, ingrese los parametros",
+            showConfirmButton: false,
+            timer: 2000,
+            background: "#000",
+            color: "#fff",
+            iconColor: "#0099ffff"
+        });
+        return;
+    }
     let resultado = multiConst * voltajeUno.value
     let resultadoFinal1 = potenciaUno.value / resultado
 
@@ -81,11 +147,35 @@ calcularUno.onclick = () => {
 }
 
 limpiarUno.onclick = () => {
-    localStorage.removeItem("resultado");
+    try {
+        localStorage.removeItem("resultado");
 
-    let resultadoCalculoUno = document.getElementById("resultadoCalculoUno")
-    resultadoCalculoUno.innerText = " "
-    print.innerText = resultadoCalculoUno
+        let resultadoCalculoUno = document.getElementById("resultadoCalculoUno")
+        resultadoCalculoUno.innerText = " "
+        print.innerText = resultadoCalculoUno
+    } catch (error) {
+        console.error("Error al limpiar el resultado:", error.message);
+        Swal.fire({
+            position: "center",
+            icon: "error",
+            title: "Error al limpiar",
+            text: error.message,
+            background: "#000",
+            color: "#fff",
+            iconColor: "#ff0033"
+        });
+    } finally {
+        Swal.fire({
+            position: "center-center",
+            icon: "success",
+            title: "Formulario Limpiado",
+            showConfirmButton: false,
+            timer: 1500,
+            background: "#000",
+            color: "#fff",
+            iconColor: "#00ffffff"
+        });
+    }
 }
 
 const sectionFormularioUno = document.getElementById("sectionFormularioUno");
@@ -106,6 +196,19 @@ function limpiarValorUno(campo) {
 }
 
 reiniciarFormUno.addEventListener("click", () => {
+    if (!potenciaUno.value || !voltajeUno.value) {
+        Swal.fire({
+            position: "center-center",
+            icon: "error",
+            title: "No hay datos ingresados",
+            showConfirmButton: false,
+            timer: 1000,
+            background: "#000",
+            color: "#fff",
+            iconColor: "#ff0000ff"
+        });
+        return;
+    } 
     limpiarCamposUno(sectionFormularioUno, limpiarValorUno);
 
 });
