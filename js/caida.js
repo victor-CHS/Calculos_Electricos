@@ -1,25 +1,3 @@
-// let seccionTrans = [
-//     { cable: "16", seccion: 1.31 },
-//     { cable: "14", seccion: 2.08 },
-//     { cable: "12", seccion: 3.31 },
-//     { cable: "10", seccion: 5.26 },
-//     { cable: "8", seccion: 8.37 },
-//     { cable: "6", seccion: 13.30 },
-//     { cable: "4", seccion: 21.20 },
-//     { cable: "2", seccion: 33.60 },
-//     { cable: "1/0", seccion: 53.49 },
-//     { cable: "2/0", seccion: 67.43 },
-//     { cable: "3/0", seccion: 85.01 },
-//     { cable: "4/0", seccion: 107.20 }
-// ];
-
-// let seccion = ""; 
-// for (let i = 0; i < seccionTrans.length; i++) {
-//     seccion += `<option value="${seccionTrans[i].seccion}">${seccionTrans[i].cable}</option>`;
-// }
-
-// document.getElementById("cable").innerHTML = seccion;
-
 fetch("../json/calibres.json")
     .then(res => res.json())
     .then(dato => {
@@ -29,7 +7,7 @@ fetch("../json/calibres.json")
         });
         document.getElementById("cable").innerHTML = seccion;
     })
-
+//Calculo de Caida de tension monofasico
 let calcular = document.getElementById("calcular")
 let distancia = document.getElementById("distancia")
 let corriente = document.getElementById("corriente")
@@ -140,7 +118,7 @@ reiniciar.addEventListener("click", () => {
 });
 
 
-//Caida de tension Bifasica
+//Calculo de Caida de tension Bifasica
 fetch("../json/calibres.json")
     .then(res => res.json())
     .then(dato => {
@@ -260,7 +238,7 @@ reiniciarUno.addEventListener("click", () => {
 });
 
 
-//Caida de tension Trifasica
+//Calculo de Caida de tension Trifasica
 fetch("../json/calibres.json")
     .then(res => res.json())
     .then(dato => {

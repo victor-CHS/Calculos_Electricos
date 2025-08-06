@@ -15,6 +15,7 @@ let voltaje = document.getElementById("voltaje")
 const factorDePotencia = 0.9
 
 calcular.onclick = () => {
+
     if (!potencia.value || !voltaje.value) {
         Swal.fire({
             position: "center-center",
