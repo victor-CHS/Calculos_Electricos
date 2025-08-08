@@ -1,3 +1,12 @@
+document.addEventListener(`DOMContentLoaded`, function () {
+    const input = document.querySelectorAll(`numPositivos`);
+    input.forEach(input => {
+        input.addEventListener(`input`, () => {
+            input.value = input.value.replace(/[^0-9]/g, '');
+        });
+    });
+});
+
 fetch("../json/calibres.json")
     .then(res => res.json())
     .then(dato => {
@@ -12,7 +21,7 @@ let calcular = document.getElementById("calcular")
 let distancia = document.getElementById("distancia")
 let corriente = document.getElementById("corriente")
 let cable = document.getElementById("cable")
-const cuatro = 4
+const numconts = 4
 const volt = 127
 
 
@@ -31,30 +40,30 @@ calcular.onclick = () => {
         return;
     }
 
-    let resultado1 = cuatro * distancia.value * corriente.value
+    let resultado1 = numconts * distancia.value * corriente.value
     let resultado2 = volt * parseFloat(cable.value)
     let resultadoFinal = resultado1 / resultado2
 
-    localStorage.setItem("resultado", JSON.stringify(resultadoFinal));
-    let dato = JSON.parse(localStorage.getItem("resultado"))
+    localStorage.setItem("resultado_mono", JSON.stringify(resultadoFinal));
+    let dato = JSON.parse(localStorage.getItem("resultado_mono"))
 
     let resultadoCalculo = document.getElementById("resultadoCalculo")
     if (dato <= 3) {
         resultadoCalculo.innerText = "El resultado de la caida de tension es: \n" + dato.toFixed(2) + " %"
-        print.innerText = resultadoCalculo
+        print.innerText = resultadoCalculo.innerText;
     } else if (dato > 3) {
         resultadoCalculo.innerText = "El resultado de la caida de tension es: " + dato.toFixed(2) + " %,\n " + "se debera elegir otro calibre"
-        print.innerText = resultadoCalculo
+        print.innerText = resultadoCalculo.innerText;
     }
 }
 
 limpiar.onclick = () => {
     try {
-        localStorage.removeItem("resultado");
+        localStorage.removeItem("resultado_mono");
 
         let resultadoCalculo = document.getElementById("resultadoCalculo")
         resultadoCalculo.innerText = " "
-        print.innerText = resultadoCalculo
+        print.innerText = resultadoCalculo.innerText;
 
     } catch (error) {
         console.error("Error al limpiar el resultado:", error.message);
@@ -114,14 +123,13 @@ reiniciar.addEventListener("click", () => {
         return;
     }
     limpiarCampos(sectionFormulario, limpiarValor);
-
 });
 
 
 //Calculo de Caida de tension Bifasica
 fetch("../json/calibres.json")
     .then(res => res.json())
-    .then(dato => {
+    .then(dato => {  
         let seccion = "";
         dato.forEach(item => {
             seccion += `<option value="${item.seccion}">${item.cable}</option>`;
@@ -154,26 +162,26 @@ calcularUno.onclick = () => {
     let resultadoDos = voltajeUno.value * cableUno.value
     let resultadoFinal = resultadoUno / resultadoDos
 
-    localStorage.setItem("resultado", JSON.stringify(resultadoFinal));
-    let dato = JSON.parse(localStorage.getItem("resultado"))
+    localStorage.setItem("resultado_bi", JSON.stringify(resultadoFinal));
+    let dato = JSON.parse(localStorage.getItem("resultado_bi"))
 
     let resultadoCalculoUno = document.getElementById("resultadoCalculoUno")
     if (dato <= 3) {
         resultadoCalculoUno.innerText = "El resultado de la caida de tension es: \n" + dato.toFixed(2) + " %"
-        print.innerText = resultadoCalculoUno
+        print.innerText = resultadoCalculoUno.innerText;
     } else if (dato > 3) {
         resultadoCalculoUno.innerText = "El resultado de la caida de tension es: " + dato.toFixed(2) + " %,\n " + "se debera elegir otro calibre"
-        print.innerText = resultadoCalculoUno
+        print.innerText = resultadoCalculoUno.innerText;
     }
 }
 
 limpiarUno.onclick = () => {
     try {
-        localStorage.removeItem("resultado");
+        localStorage.removeItem("resultado_bi");
 
         let resultadoCalculoUno = document.getElementById("resultadoCalculoUno")
         resultadoCalculoUno.innerText = " "
-        print.innerText = resultadoCalculoUno
+        print.innerText = resultadoCalculoUno.innerText;
 
     } catch (error) {
         console.error("Error al limpiar el resultado:", error.message);
@@ -277,26 +285,26 @@ calcularDos.onclick = () => {
     let resultado2 = voltajeDos.value * cableDos.value
     let resultadoFinal = resultado1 / resultado2
 
-    localStorage.setItem("resultado", JSON.stringify(resultadoFinal));
-    let dato = JSON.parse(localStorage.getItem("resultado"))
+    localStorage.setItem("resultado_tri", JSON.stringify(resultadoFinal));
+    let dato = JSON.parse(localStorage.getItem("resultado_tri"))
 
     let resultadoCalculoDos = document.getElementById("resultadoCalculoDos")
     if (dato <= 3) {
         resultadoCalculoDos.innerText = "El resultado de la caida de tension es: " + dato.toFixed(2) + " %"
-        print.innerText = resultadoCalculoDos
+        print.innerText = resultadoCalculoDos.innerText;
     } else if (dato > 3) {
         resultadoCalculoDos.innerText = "El resultado de la caida de tension es: " + dato.toFixed(2) + " %,\n " + "se debera elegir otro calibre"
-        print.innerText = resultadoCalculoDos
+        print.innerText = resultadoCalculoDos.innerText;
     }
 }
 
 limpiarDos.onclick = () => {
     try {
-        localStorage.removeItem("resultado");
+        localStorage.removeItem("resultado_tri");
 
         let resultadoCalculoDos = document.getElementById("resultadoCalculoDos")
         resultadoCalculoDos.innerText = " "
-        print.innerText = resultadoCalculoDos
+        print.innerText = resultadoCalculoDos.innerText;
 
     } catch (error) {
         console.error("Error al limpiar el resultado:", error.message);

@@ -32,22 +32,22 @@ calcular.onclick = () => {
     let resultado = voltaje.value * factorDePotencia
     let resultadoFinal = potencia.value / resultado
 
-    localStorage.setItem("resultado", JSON.stringify(resultadoFinal));
-    let dato = JSON.parse(localStorage.getItem("resultado"))
+    localStorage.setItem("resultado_mono_corriente", JSON.stringify(resultadoFinal));
+    let dato = JSON.parse(localStorage.getItem("resultado_mono_corriente"))
 
     let resultadoCalculo = document.getElementById("resultadoCalculo")
     resultadoCalculo.innerText = "El resultado de la corriente es: \n" + dato.toFixed(2) + " A"
-    print.innerText = resultadoCalculo
+    print.innerText = resultadoCalculo.innerText;
 
 }
 
 limpiar.onclick = () => {
     try {
-        localStorage.removeItem("resultado");
+        localStorage.removeItem("resultado_mono_corriente");
 
         let resultadoCalculo = document.getElementById("resultadoCalculo")
         resultadoCalculo.innerText = " "
-        print.innerText = resultadoCalculo
+        print.innerText = resultadoCalculo.innerText;
 
     } catch (error) {
         console.error("Error al limpiar el resultado:", error.message);
@@ -139,21 +139,21 @@ calcularUno.onclick = () => {
     let resultado = multiConst * voltajeUno.value
     let resultadoFinal1 = potenciaUno.value / resultado
 
-    localStorage.setItem("resultado", JSON.stringify(resultadoFinal1));
-    let datoUno = JSON.parse(localStorage.getItem("resultado"))
+    localStorage.setItem("resultado_tri_corriente", JSON.stringify(resultadoFinal1));
+    let datoUno = JSON.parse(localStorage.getItem("resultado_tri_corriente"))
 
     let resultadoCalculoUno = document.getElementById("resultadoCalculoUno")
     resultadoCalculoUno.innerText = "El resultado de la corriente es: \n" + datoUno.toFixed(2) + " A"
-    print.innerText = resultadoCalculoUno
+    print.innerText = resultadoCalculoUno.innerText;
 }
 
 limpiarUno.onclick = () => {
     try {
-        localStorage.removeItem("resultado");
+        localStorage.removeItem("resultado_tri_corriente");
 
         let resultadoCalculoUno = document.getElementById("resultadoCalculoUno")
         resultadoCalculoUno.innerText = " "
-        print.innerText = resultadoCalculoUno
+        print.innerText = resultadoCalculoUno.innerText;
     } catch (error) {
         console.error("Error al limpiar el resultado:", error.message);
         Swal.fire({
